@@ -32,19 +32,27 @@ Run the development server on [localhost:3000](http://localhost:3000):
 ```bash
 npm run dev
 ```
+
 Run the unit test:
+
 ```bash
 npm run test
 ```
+
 Format the code to prettier code style:
+
 ```bash
 npm run format
 ```
+
 Find linting errors:
+
 ```bash
 npm run lint
 ```
+
 Fix the fixable by the cli linting issues:
+
 ```bash
 npm run lint:fix
 ```
