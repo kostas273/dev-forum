@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["react", "react-hooks", "@next/eslint-plugin-next"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:@next/next/core-web-vitals"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module",
+        "project": true,
+        "tsconfigRootDir": "./",
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "warnOnUnsupportedTypeScriptVersion": true
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked"
+      ]
+    },
+    {
+      "files": ["test/**"],
+      "plugins": ["jest", "jest-dom", "testing-library"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ],
+      "settings": {
+        "jest": {
+          "version": "29.7.0"
+        }
+      }
+    }
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}
