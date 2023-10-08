@@ -1,8 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "cSpell.words": ["Grotesk", "tailwindcss"]
+  "cSpell.words": ["Grotesk", "nextjs", "tailwindcss", "trpc"]
 }
