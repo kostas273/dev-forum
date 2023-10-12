@@ -1,3 +1,5 @@
+'use client';
+
 import {
   type ReactNode,
   createContext,
@@ -6,19 +8,17 @@ import {
   useContext,
 } from 'react';
 
-type ThemeMode = 'light' | 'dark' | 'system' | '';
-
 interface ThemeContext {
-  mode: ThemeMode;
-  setMode: (mode: ThemeMode) => void;
+  mode: string;
+  setMode: (mode: string) => void;
 }
 
 const ThemeContext = createContext<ThemeContext | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<ThemeMode>('');
+  const [mode, setMode] = useState('');
 
-  const handleThemeChange = () => {
+  useEffect(() => {
     if (mode === 'light') {
       setMode('dark');
       document.documentElement.classList.add('dark');
@@ -26,10 +26,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       setMode('light');
       document.documentElement.classList.add('light');
     }
-  };
-
-  useEffect(() => {
-    handleThemeChange();
   }, [mode]);
 
   return (
